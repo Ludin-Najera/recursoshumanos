@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "recursoshumanos"
+    }
+  },
+  "defaultProject": "recursoshumanos",
+  "cli": {
+    "analytics": "47c35385-f1a6-4422-a89e-199bb5e6b6a2"
+  }
 }
