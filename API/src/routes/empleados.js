@@ -4,7 +4,7 @@ const router = express.Router();
 const mysqlConnection  = require('../database.js');
 
 // GET all Employees
-router.get('/', (req, res) => {
+router.get('/empleados', (req, res) => {
   mysqlConnection.query('SELECT * FROM empleados', (err, rows, fields) => {
     if(!err) {
       res.json(rows);
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 // GET An Employee
-router.get('/:id', (req, res) => {
+router.get('/empleados/:id', (req, res) => {
   const { id } = req.params; 
   mysqlConnection.query('SELECT * FROM empleados WHERE idempleados = ?', [id], (err, rows, fields) => {
     if (!err) {
@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
 });
 
 // DELETE An Employee
-router.delete('/:id', (req, res) => {
+router.delete('/empleados/:id', (req, res) => {
   const { id } = req.params;
   mysqlConnection.query('DELETE FROM empleados WHERE idempleados = ?', [id], (err, rows, fields) => {
     if(!err) {
@@ -39,7 +39,7 @@ router.delete('/:id', (req, res) => {
 });
 
 // INSERT An Employee
-router.post('/', (req, res) => {
+router.post('/empleados/', (req, res) => {
   const {id, nombre, apellido, estado,puesto } = req.body;
   console.log(id,nombre, apellido, estado,puesto);
   const query = `
@@ -55,7 +55,7 @@ router.post('/', (req, res) => {
 
 });
 
-router.put('/:id', (req, res) => {
+router.put('/empleados/:id', (req, res) => {
   const { nombre, apellido,puesto, estado } = req.body;
   const { id } = req.params;
   const query = `

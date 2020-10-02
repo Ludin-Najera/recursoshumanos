@@ -8,7 +8,13 @@ var corsOptions = {
   origin: "http://localhost:4200"
 };
 
+var corsOptions2 = {
+  origin2: "http://localhost:5000/empleados"
+};
+
 app.use(cors(corsOptions));
+app.use(cors(corsOptions2));
+
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());

@@ -17,6 +17,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { MaestroempleadosComponent } from './maestroempleados/maestroempleados.component';
+import { EmpleadosService } from './_services/inicio.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,10 @@ import { MaestroempleadosComponent } from './maestroempleados/maestroempleados.c
     FormsModule,
     HttpClientModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [
+    authInterceptorProviders,
+    EmpleadosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
