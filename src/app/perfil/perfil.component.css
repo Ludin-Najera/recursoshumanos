@@ -146,7 +146,6 @@
 .container{
 
     background-color: #34495E;
-    color: #FFFFFF;
     width: auto;
     border-radius: 10px;
     position:absolute;
@@ -159,8 +158,13 @@
 
     border-radius: 10px;
     width: 320px;
+    color: black;
 }
 
 h2{
     color: #FFFFFF; 
+}
+
+p{
+    color: #FFFFFF;
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { empleados1 } from '../models/empleados';
+import { detalleempleados1 } from '../models/detalleempleados';
 
 const AUTH_API = 'http://localhost:5000/';
 
@@ -51,8 +52,8 @@ export class EmpleadosService {
     return this.http.get(`http://localhost:5000/detalleempleados/${idempleados}`);
   }
   
-  editardetalleempleados(idempleados: string | number, editarempleados: empleados1): Observable<empleados1>{
-    return this.http.put(`http://localhost:5000/detalleempleados/${idempleados}`, editarempleados);
+  editardetalleempleados(idempleados: string | number, editardetalleempleados: detalleempleados1): Observable<detalleempleados1>{
+    return this.http.put(`http://localhost:5000/detalleempleados/${idempleados}`, editardetalleempleados);
   }
 
 }

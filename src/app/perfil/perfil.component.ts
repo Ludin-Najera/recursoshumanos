@@ -13,7 +13,6 @@ import { Route } from '@angular/compiler/src/core';
 export class PerfilComponent implements OnInit {
 
   detalleempleados: detalleempleados1 ={
-    iddetalleempleados: 0,
     telefono: '',
     direccion: '',
     dpi: '',
@@ -42,7 +41,7 @@ export class PerfilComponent implements OnInit {
   }
 
   editar(){
-    this.empleadosservice.editardetalleempleados(this.detalleempleados.iddetalleempleados, this.detalleempleados).subscribe( res =>{
+    this.empleadosservice.editardetalleempleados(this.detalleempleados.idempleados, this.detalleempleados).subscribe( res =>{
       console.log(res);
       this.router.navigateByUrl('/maestroempleados');
     },
