@@ -82,16 +82,21 @@
       <h2 class="registro-header">Perfil</h2>
     
       <form class="registro-container" method="POST">
+        <p>Telefono</p> 
         <p>
-          <input class ="cajitas"type="text" [(ngModel)]="detalleempleados.telefono" name='telefono' placeholder="Telefono" required="required"></p>
+          <input class ="cajitas"type="text" [(ngModel)]="detalleempleados.telefono" name='telefono' value="Telefono" placeholder="Telefono" required="required"></p>
+        <p>Dirección  </p>
         <p>
-            <input  class ="cajitas"  type="text" [(ngModel)]="detalleempleados.direccion" name='direccion' placeholder="Direccion" required="required"></p>
+          <input  class ="cajitas"  type="text" [(ngModel)]="detalleempleados.direccion" name='direccion' value="Direccion" placeholder="Direccion" required="required"></p>
+        <p>DPI </p>     
+        <p>  
+        <input  class ="cajitas"  type="text" [(ngModel)]="detalleempleados.dpi" name='dpi' value="DPI" placeholder="DPI" required="required"></p>
+        <p>Fecha Ingreso </p>
         <p>
-            <input  class ="cajitas"  type="text" [(ngModel)]="detalleempleados.dpi" name='dpi' placeholder="DPI" required="required"></p>
+            <input  class ="cajitas"  type="date" [(ngModel)]="detalleempleados.fechaingreso" name='fechaingreso' value="Fecha de ingreso" placeholder="Fecha de Ingreso" required="required"></p>
+        <p>Vacaciones </p>       
         <p>
-            <input  class ="cajitas"  type="date" [(ngModel)]="detalleempleados.fechaingreso" name='fechaingreso' placeholder="Fecha de Ingreso" required="required"></p>
-        <p>
-            <input  class ="cajitas"  type="text" [(ngModel)]="detalleempleados.vacaciones" name='vacaciones' placeholder="Vacaciones" required="required"></p>
+            <input  class ="cajitas"  type="text" [(ngModel)]="detalleempleados.vacaciones" name='vacaciones' value="Vacaciones" placeholder="Vacaciones" required="required"></p>
             
         <p>
           <input type="submit" (click)="edit ? editar() : registrar()" value="Guardar"><input type="button" onclick="location.href='http://localhost:4200/maestroempleados'" value="Cancelar"> </p>
