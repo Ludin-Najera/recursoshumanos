@@ -41,9 +41,9 @@ router.get('/empleados/:id', (req, res) => {
 });
 
 // GET Detalle Empleados
-router.get('/empleadosdt/:id', (req, res) => {
+router.get('/detalleempleados/:id', (req, res) => {
   const { id } = req.params; 
-  mysqlConnection.query('SELECT a.telefono,a.direccion,a.dpi,a.fechaingreso,a.idempleados FROM detalle_empleados a RIGHT JOIN empleados b ON a.idempleados=b.idempleados WHERE b.idempleados = ?', [id], (err, rows, fields) => {
+  mysqlConnection.query('SELECT a.telefono,a.direccion,a.dpi,a.fechaingreso,a.vacaciones,a.idempleados FROM detalle_empleados a RIGHT JOIN empleados b ON a.idempleados=b.idempleados WHERE b.idempleados = ?', [id], (err, rows, fields) => {
     if (!err) {
       res.json(rows[0]);
     } else {

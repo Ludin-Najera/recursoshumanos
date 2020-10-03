@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'crudempleados', component: CrudempleadosComponent },
   { path: 'crudempleados/:idempleados', component: CrudempleadosComponent },
   { path: 'empleadosinactivos', component: InactivosComponent },
-  { path: 'perfilempleado/:idempleados', component: PerfilComponent },
+  { path: 'detalleempleados/:idempleados', component: PerfilComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

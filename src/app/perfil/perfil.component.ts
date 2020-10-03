@@ -30,7 +30,7 @@ export class PerfilComponent implements OnInit {
     const params = this.activedroute.snapshot.params;
     console.log(params);
      if(params.idempleados){
-      this.empleadosservice.getempleado(params.idempleados).subscribe(res=> {
+      this.empleadosservice.getdetalleempleados(params.idempleados).subscribe(res=> {
         console.log(res);
         this.detalleempleados = res;
         this.edit = true;
@@ -51,7 +51,7 @@ export class PerfilComponent implements OnInit {
   }
 
   registrar(){
-    
+
   }
 
 }
