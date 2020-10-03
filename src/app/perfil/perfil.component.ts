@@ -42,7 +42,7 @@ export class PerfilComponent implements OnInit {
   }
 
   editar(){
-    this.empleadosservice.editarempleados(this.detalleempleados.iddetalleempleados, this.detalleempleados).subscribe( res =>{
+    this.empleadosservice.editardetalleempleados(this.detalleempleados.iddetalleempleados, this.detalleempleados).subscribe( res =>{
       console.log(res);
       this.router.navigateByUrl('/maestroempleados');
     },

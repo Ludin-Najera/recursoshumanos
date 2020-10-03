@@ -50,6 +50,9 @@ export class EmpleadosService {
   getdetalleempleados(idempleados: string){
     return this.http.get(`http://localhost:5000/detalleempleados/${idempleados}`);
   }
-
+  
+  editardetalleempleados(idempleados: string | number, editarempleados: empleados1): Observable<empleados1>{
+    return this.http.put(`http://localhost:5000/detalleempleados/${idempleados}`, editarempleados);
+  }
 
 }

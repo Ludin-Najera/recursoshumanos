@@ -117,7 +117,7 @@ router.put('/empleados/:id', (req, res) => {
 });
 
 /// ACTUALIZA DETALLE EMPLEADOS
-router.put('/empleadosdt/:id', (req, res) => {
+router.put('/detalleempleados/:id', (req, res) => {
   const { telefono, direccion,dpi, fechaingreso } = req.body;
   const { id } = req.params;
   const query = `
