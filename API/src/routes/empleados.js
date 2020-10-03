@@ -41,7 +41,7 @@ router.delete('/empleados/:id', (req, res) => {
 });
 
 // INSERT An Employee
-router.post('/empleados/', (req, res) => {
+router.post('/empleados', (req, res) => {
   const {id, nombre, apellido, estado,puesto } = req.body;
   console.log(id,nombre, apellido, estado,puesto);
   const query = `

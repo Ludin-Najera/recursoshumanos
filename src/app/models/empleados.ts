@@ -3,5 +3,5 @@ export interface empleados1{
     nombres?: string;
     apellidos?: string;
     puesto?: string;
-    estado?: number;
+    estado?: string;
 }

@@ -29,6 +29,10 @@ export class MaestroempleadosComponent implements OnInit {
     );
   }
 
+  editarempleados(id: string){
+    console.log(id);
+  }
+
 
 
 }
