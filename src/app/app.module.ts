@@ -17,7 +17,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { MaestroempleadosComponent } from './maestroempleados/maestroempleados.component';
-import { EmpleadosService } from './_services/inicio.service';
+import { EmpleadosService } from './_services/maestro.service';
 
 @NgModule({
   declarations: [

@@ -3,6 +3,8 @@ const router = express.Router();
 
 const mysqlConnection  = require('../database.js');
 
+        
+ 
 // GET all Employees
 router.get('/empleados', (req, res) => {
   mysqlConnection.query('SELECT * FROM empleados', (err, rows, fields) => {

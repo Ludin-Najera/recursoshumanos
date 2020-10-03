@@ -1,5 +1,5 @@
 import { Component, OnInit, Host, HostBinding } from '@angular/core';
-import { EmpleadosService } from '../_services/inicio.service';
+import { EmpleadosService } from '../_services/maestro.service';
 import { empleados1 } from '../models/empleados';
 
 @Component({
