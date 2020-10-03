@@ -20,6 +20,7 @@ import { MaestroempleadosComponent } from './maestroempleados/maestroempleados.c
 import { EmpleadosService } from './_services/maestro.service';
 import { CrudempleadosComponent } from './crudempleados/crudempleados.component';
 import { InactivosComponent } from './inactivos/inactivos.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { InactivosComponent } from './inactivos/inactivos.component';
     BoardAdminComponent,
     MaestroempleadosComponent,
     CrudempleadosComponent,
-    InactivosComponent
+    InactivosComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

@@ -34,5 +34,7 @@ export class InactivosComponent implements OnInit {
     console.log(id);
   }
 
+  
+
 
 }
