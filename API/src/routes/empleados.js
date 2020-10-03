@@ -59,7 +59,7 @@ router.post('/empleados', (req, res) => {
   const query = `
     CALL GrabarDetalle(?,?, ?, ?, ?, ?, ?, ?, ?);
   `;
-  mysqlConnection.query(query, [nombre, apellido, estado, puesto, telefono,direccion,dpi,fechaingreso, vacaciones], (err, rows, fields) => {
+  mysqlConnection.query(query, [nombre, apellido, puesto,estado, telefono,direccion,dpi,fechaingreso, vacaciones], (err, rows, fields) => {
     if(!err) {
       res.json({status: 'Empleado guardado'});
     } else {
