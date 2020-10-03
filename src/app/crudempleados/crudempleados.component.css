@@ -145,7 +145,7 @@
 
 .container{
 
-    background-color:darkgray;
+    background-color: #34495E;
     width: auto;
     border-radius: 10px;
     position:absolute;
@@ -158,4 +158,8 @@
 
     border-radius: 10px;
     width: 320px;
+}
+
+h2{
+    color: #FFFFFF;
 }

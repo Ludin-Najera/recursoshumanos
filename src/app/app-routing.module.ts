@@ -11,6 +11,7 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { MaestroempleadosComponent } from './maestroempleados/maestroempleados.component';
 import { CrudempleadosComponent } from './crudempleados/crudempleados.component';
 import { InactivosComponent } from './inactivos/inactivos.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'crudempleados', component: CrudempleadosComponent },
   { path: 'crudempleados/:idempleados', component: CrudempleadosComponent },
   { path: 'empleadosinactivos', component: InactivosComponent },
+  { path: 'perfilempleado', component: PerfilComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
