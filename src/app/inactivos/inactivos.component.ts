@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Host, HostBinding } from '@angular/core';
+import { EmpleadosService } from '../_services/maestro.service';
+import { empleados1 } from '../models/empleados';
+
 
 @Component({
   selector: 'app-inactivos',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InactivosComponent implements OnInit {
 
-  constructor() { }
+  @HostBinding('class') classes = 'row';
+
+  empleados: any = [];
+
+  constructor(private empleadosservice: EmpleadosService) { }
 
   ngOnInit(): void {
+    this.actualizar();
   }
+
+  actualizar(){
+    this.empleadosservice.getempleadosinactivos().subscribe(
+      res => {
+        this.empleados = res;
+      },
+        
+      err => console.error(err)
+    );
+  }
+
+  editarempleados(id: string){
+    console.log(id);
+  }
+
 
 }

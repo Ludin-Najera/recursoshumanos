@@ -16,6 +16,18 @@ router.get('/empleados', (req, res) => {
   });  
 });
 
+
+router.get('/empleadosinactivos', (req, res) => {
+  mysqlConnection.query('SELECT * FROM empleados WHERE estado = 2', (err, rows, fields) => {
+    if(!err) {
+      res.json(rows);
+    } else {
+      console.log(err);
+    }
+  });  
+});
+
+
 // GET An Employee
 router.get('/empleados/:id', (req, res) => {
   const { id } = req.params; 
@@ -41,13 +53,13 @@ router.delete('/empleados/:id', (req, res) => {
 });
 
 // INSERT An Employee
-router.post('/empleados', (req, res) => {
-  const {id, nombre, apellido, estado,puesto } = req.body;
-  console.log(id,nombre, apellido, estado,puesto);
+/*router.post('/empleados', (req, res) => {
+  const {id, nombres, apellidos, estado,puesto } = req.body;
+  console.log(id,nombres, apellidos, estado,puesto);
   const query = `
     CALL EmpleadosAgregaroEditar(?,?, ?, ?, ?);
   `;
-  mysqlConnection.query(query, [id,nombre, apellido, estado,puesto], (err, rows, fields) => {
+  mysqlConnection.query(query, [id, nombres, apellidos, estado, puesto], (err, rows, fields) => {
     if(!err) {
       res.json({status: 'Empleado guardado'});
     } else {
@@ -55,6 +67,24 @@ router.post('/empleados', (req, res) => {
     }
   });
 
+});*/
+
+router.post('/empleados', (req, res) => {
+  const {id,nombres,apellidos,puesto,estado} = req.body;
+  const newLink={
+      nombres,apellidos,puesto,estado
+  };
+
+  mysqlConnection.query('INSERT INTO empleados  set ?', [newLink],(error, results, fields) =>{
+   if(error){
+     console.log(error);
+     return res.status(500).send(error);
+
+   }
+
+   return res.status(200).json('Empleado Guardado');
+
+  });
 });
 
 router.put('/empleados/:id', (req, res) => {

@@ -26,9 +26,13 @@ export class EmpleadosService {
 
   //mostrar todos los empleados
   getempleados() {
-
     return this.http.get(AUTH_API + 'empleados',httpOptions);
   }
+
+  getempleadosinactivos() {
+    return this.http.get(AUTH_API + 'empleadosinactivos',httpOptions);
+  }
+
 
   //mostrar un empleado
   getempleado(idempleados: string){
