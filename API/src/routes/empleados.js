@@ -52,23 +52,24 @@ router.delete('/empleados/:id', (req, res) => {
   });
 });
 
+
 // INSERT An Employee
 router.post('/empleados', (req, res) => {
-  const { nombre, apellido, estado, puesto } = req.body;
-  console.log(nombre, apellido, estado,puesto);
+  const { nombres, apellidos, estado, puesto } = req.body;
+  console.log(nombres, apellidos, estado,puesto);
   const query = `
     CALL GrabarDetalle(?, ?, ?, ?);
   `;
-  mysqlConnection.query(query, [nombre, apellido, puesto,estado], (err, rows, fields) => {
+  mysqlConnection.query(query, [nombres, apellidos, puesto,estado], (err, rows, fields) => {
     if(!err) {
       res.json({status: 'Empleado guardado'});
     } else {
       console.log(err);
     }
   });
-});
-
-/*router.post('/empleados', (req, res) => {
+});   
+/*
+router.post('/empleados', (req, res) => {
   const {id,nombres,apellidos,puesto,estado} = req.body;
   const newLink={
       nombres,apellidos,puesto,estado
@@ -84,7 +85,9 @@ router.post('/empleados', (req, res) => {
    return res.status(200).json('Empleado Guardado');
 
   });
-});*/
+});
+*/
+
 
 router.put('/empleados/:id', (req, res) => {
   const { nombres, apellidos,puesto, estado } = req.body;
