@@ -113,4 +113,19 @@ router.put('/empleados/:id', (req, res) => {
   });
 });
 
+/// ACTUALIZA DETALLE EMPLEADOS
+router.put('/empleadosdt/:id', (req, res) => {
+  const { telefono, direccion,dpi, fechaingreso } = req.body;
+  const { id } = req.params;
+  const query = `
+  CALL ActualizaDetalle(?, ?, ?, ?);
+  `;
+  mysqlConnection.query(query, [telefono,direccion,dpi,fechaingreso], (err, rows, fields) => {
+    if(!err) {
+      res.json({status: 'Empleado Actualizado'});
+    } else {
+      console.log(err);
+    }
+  });
+});
 module.exports = router;
