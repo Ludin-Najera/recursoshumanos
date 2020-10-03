@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'maestroempleados', component: MaestroempleadosComponent },
   { path: 'crudempleados', component: CrudempleadosComponent },
+  { path: 'crudempleados/:idempleados', component: CrudempleadosComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

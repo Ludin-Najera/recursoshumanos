@@ -19,6 +19,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { MaestroempleadosComponent } from './maestroempleados/maestroempleados.component';
 import { EmpleadosService } from './_services/maestro.service';
 import { CrudempleadosComponent } from './crudempleados/crudempleados.component';
+import { InactivosComponent } from './inactivos/inactivos.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CrudempleadosComponent } from './crudempleados/crudempleados.component'
     BoardUserComponent,
     BoardAdminComponent,
     MaestroempleadosComponent,
-    CrudempleadosComponent
+    CrudempleadosComponent,
+    InactivosComponent
   ],
   imports: [
     BrowserModule,

@@ -26,8 +26,8 @@ export class CrudempleadosComponent implements OnInit {
   ngOnInit() {
     const params = this.activedroute.snapshot.params;
     console.log(params);
-     if(params.idcomplementos){
-      this.empleadosservice.getempleado(params.idempleado).subscribe(res=> {
+     if(params.idempleados){
+      this.empleadosservice.getempleado(params.idempleados).subscribe(res=> {
         console.log(res);
         this.empleados = res;
         this.edit = true;

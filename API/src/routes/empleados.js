@@ -7,7 +7,7 @@ const mysqlConnection  = require('../database.js');
  
 // GET all Employees
 router.get('/empleados', (req, res) => {
-  mysqlConnection.query('SELECT * FROM empleados', (err, rows, fields) => {
+  mysqlConnection.query('SELECT * FROM empleados WHERE estado = 1', (err, rows, fields) => {
     if(!err) {
       res.json(rows);
     } else {
@@ -58,12 +58,12 @@ router.post('/empleados', (req, res) => {
 });
 
 router.put('/empleados/:id', (req, res) => {
-  const { nombre, apellido,puesto, estado } = req.body;
+  const { nombres, apellidos,puesto, estado } = req.body;
   const { id } = req.params;
   const query = `
   CALL EmpleadosAgregaroEditar(?, ?, ?, ?, ?);
   `;
-  mysqlConnection.query(query, [id, nombre, apellido,puesto,estado], (err, rows, fields) => {
+  mysqlConnection.query(query, [id, nombres, apellidos, puesto,estado], (err, rows, fields) => {
     if(!err) {
       res.json({status: 'Empleado Actualizado'});
     } else {

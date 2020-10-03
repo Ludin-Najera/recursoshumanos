@@ -32,7 +32,7 @@ export class EmpleadosService {
 
   //mostrar un empleado
   getempleado(idempleados: string){
-    return this.http.get(`http://localhost:5000/empleados${idempleados}`);
+    return this.http.get(`http://localhost:5000/empleados/${idempleados}`);
   }
 
   insertarempleados(empleados: empleados1){
@@ -40,7 +40,7 @@ export class EmpleadosService {
   };
 
   editarempleados(idempleados: string | number, editarempleados: empleados1): Observable<empleados1>{
-    return this.http.patch(`http://localhost:5000/empleados/${idempleados}`, editarempleados);
+    return this.http.put(`http://localhost:5000/empleados/${idempleados}`, editarempleados);
   }
 
 
