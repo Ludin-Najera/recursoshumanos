@@ -54,19 +54,19 @@ router.delete('/empleados/:id', (req, res) => {
 
 // INSERT An Employee
 router.post('/empleados', (req, res) => {
-  const { nombre, apellido, estado, puesto, telefono, direccion, dpi, fechaingreso, vacaciones  } = req.body;
-  console.log(nombre, apellido, estado,puesto, telefono, direccion, dpi, fechaingreso, vacaciones);
+  const { nombre, apellido, estado, puesto } = req.body;
+  console.log(nombre, apellido, estado,puesto);
   const query = `
-    CALL GrabarDetalle(?,?, ?, ?, ?, ?, ?, ?, ?);
+    CALL GrabarDetalle(?, ?, ?, ?);
   `;
-  mysqlConnection.query(query, [nombre, apellido, puesto,estado, telefono,direccion,dpi,fechaingreso, vacaciones], (err, rows, fields) => {
+  mysqlConnection.query(query, [nombre, apellido, puesto,estado], (err, rows, fields) => {
     if(!err) {
       res.json({status: 'Empleado guardado'});
     } else {
       console.log(err);
     }
   });
-
+});
 
 /*router.post('/empleados', (req, res) => {
   const {id,nombres,apellidos,puesto,estado} = req.body;
