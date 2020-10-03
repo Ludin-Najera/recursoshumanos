@@ -47,5 +47,9 @@ export class EmpleadosService {
     return this.http.put(`http://localhost:5000/empleados/${idempleados}`, editarempleados);
   }
 
+  getdetalleempleados(idempleados: string){
+    return this.http.get(`http://localhost:5000/detalleempleados/${idempleados}`);
+  }
+
 
 }

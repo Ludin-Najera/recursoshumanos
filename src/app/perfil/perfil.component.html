@@ -1,57 +1,102 @@
-<form class="my-form">
-    <div class="container">
-      <h1>Get in touch!</h1>
-      <ul>
-        <li>
-          <select>
-            <option selected disabled>-- Please choose an option --</option>
-            <option>Request Quote</option>
-            <option>Send Resume</option>
-            <option>Other</option>      
-          </select>
-        </li>
-        <li>
-          <div class="grid grid-2">
-            <input type="text" placeholder="Name" required>  
-            <input type="text" placeholder="Surname" required>
-          </div>
-        </li>
-        <li>
-          <div class="grid grid-2">
-            <input type="email" placeholder="Email" required>  
-            <input type="tel" placeholder="Phone">
-          </div>
-        </li>    
-        <li>
-          <textarea placeholder="Message"></textarea>
-        </li>   
-        <li>
-          <input type="checkbox" id="terms">
-          <label for="terms">I have read and agreed with <a href="">the terms and conditions.</a></label>
-        </li>  
-        <li>
-          <div class="grid grid-3">
-            <div class="required-msg">REQUIRED FIELDS</div>
-            <button class="btn-grid" type="submit" disabled>
-              <span class="back">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/email-icon.svg" alt="">
-              </span>
-              <span class="front">SUBMIT</span>
-            </button>
-            <button class="btn-grid" type="reset" disabled>
-              <span class="back">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/eraser-icon.svg" alt="">
-              </span>
-              <span class="front">RESET</span>
-            </button> 
-          </div>
-        </li>    
-      </ul>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!--<div id="throbber" style="display:none; min-height:120px;"></div>
+<div id="noty-holder"></div>-->
+<div>
+<div id="wrapper">
+    <!-- Navigation -->
+ <!--   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> -->
+        <!-- Brand and toggle get grouped for better mobile display -->
+        
+        
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <!--<div class="collapse navbar-collapse navbar-ex1-collapse">-->
+            <ul class="nav navbar-nav side-nav">
+              <li>
+                <a href="maestroempleados"><i class="fa fa-fw fa-search"></i>  Maestro Empleados </a>
+              </li>
+              <li>
+                <a href="crudempleados"><i class="fa fa-fw fa-user-plus"></i>  Agregar Empleados </a>
+              </li>
+
+              <li>
+                <a href="empleadosinactivos"><i class="fa fa-fw fa-search"></i>  Empleados Inactivos </a>
+              </li>
+              <li>
+                <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> Ayuda</a>
+              </li>
+              
+
+<!--                <li>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  MENU 2 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-2" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.1</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.2</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="investigaciones/favoritas"><i class="fa fa-fw fa-user-plus"></i>  MENU 3</a>
+                </li>
+                <li>
+                    <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i> MENU 4</a>
+                </li>-->
+                
+            </ul>
+      <!--  </div> -->
+        <!-- /.navbar-collapse -->
+    <!--</nav>-->
+  </div>
+
+  <!--
+    <div id="page-wrapper">
+        <div class="container-fluid"> -->
+            <!-- Page Heading -->
+ <!--           <div class="row" id="main" >
+                <div class="col-sm-12 col-md-12 well" id="content">
+                -->
+
+<!--
+                </div>
+            </div> -->
+            <!-- /.row -->
+<!--        </div>  -->
+        <!-- /.container-fluid -->
+<!--    </div>      
+
+  -->
+    <!-- /#page-wrapper -->
+</div><!-- /#wrapper -->
+
+
+
+
+<div class="container">
+
+    <div class="registro">
+      <div class="registro-triangle"></div>
+      
+      <h2 class="registro-header">Perfil</h2>
+    
+      <form class="registro-container" method="POST">
+        <p>
+          <input class ="cajitas"type="text" [(ngModel)]="detalleempleados.telefono" name='telefono' placeholder="Telefono" required="required"></p>
+        <p>
+            <input  class ="cajitas"  type="text" [(ngModel)]="detalleempleados.direccion" name='direccion' placeholder="Direccion" required="required"></p>
+        <p>
+            <input  class ="cajitas"  type="text" [(ngModel)]="detalleempleados.dpi" name='dpi' placeholder="DPI" required="required"></p>
+        <p>
+            <input  class ="cajitas"  type="date" [(ngModel)]="detalleempleados.fechaingreso" name='fechaingreso' placeholder="Fecha de Ingreso" required="required"></p>
+        <p>
+            <input  class ="cajitas"  type="text" [(ngModel)]="detalleempleados.vacaciones" name='vacaciones' placeholder="Vacaciones" required="required"></p>
+            
+        <p>
+          <input type="submit" (click)="edit ? editar() : registrar()" value="Guardar"><input type="button" onclick="location.href='http://localhost:4200/maestroempleados'" value="Cancelar"> </p>
+      </form>
     </div>
-  </form>
-  <footer>
-    <div class="container">
-      <small>Made with <span>❤</span> by <a href="http://georgemartsoukos.com/" target="_blank">George Martsoukos</a>
-      </small>
-    </div>
-  </footer>
+  
+  
+  </div>
