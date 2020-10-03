@@ -1,0 +1,19 @@
+pre, p {
+    font-size: 1.5em;
+    color: #FE7F88;
+    background-color: transparent;
+}
+
+div {
+  background-image: url("https://img.huffingtonpost.com/asset/5dae1a3f210000ba1e34a9cd.jpeg?ops=1778_1000");
+}
+
+p {
+  background-image: none;
+}
+
+.catsandstars {
+  background-image:  url("https://img.huffingtonpost.com/asset/5dae1a3f210000ba1e34a9cd.jpeg?ops=1778_1000"), 
+                     url("https://img.huffingtonpost.com/asset/5dae1a3f210000ba1e34a9cd.jpeg?ops=1778_1000");
+  background-color: transparent;
+}
