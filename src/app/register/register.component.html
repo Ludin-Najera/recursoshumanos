@@ -1,29 +1,10 @@
-<div class="col-md-12">
+<div class="col-md-4">
     <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
-      <form
-        *ngIf="!isSuccessful"
-        name="form"
-        (ngSubmit)="f.form.valid && onSubmit()"
-        #f="ngForm"
-        novalidate
-      >
+      <img id="profile-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSb7OX8-030FDWTdZsUsosI1W7mpolxXzogmw&usqp=CAU" class="profile-img-card"/>
+      <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
         <div class="form-group">
           <label for="username">Username</label>
-          <input
-            type="text"
-            class="form-control"
-            name="username"
-            [(ngModel)]="form.username"
-            required
-            minlength="3"
-            maxlength="20"
-            #username="ngModel"
-          />
+          <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"/>
           <div class="alert-danger" *ngIf="f.submitted && username.invalid">
             <div *ngIf="username.errors.required">Username is required</div>
             <div *ngIf="username.errors.minlength">
@@ -60,7 +41,7 @@
             name="password"
             [(ngModel)]="form.password"
             required
-            minlength="6"
+            minlength="3"
             #password="ngModel"
           />
           <div class="alert-danger" *ngIf="f.submitted && password.invalid">
