@@ -13,8 +13,10 @@
         <p>
             <input  class ="cajitas"  type="text" [(ngModel)]="empleados.puesto" name='puesto' placeholder="Puesto" required="required"></p>
         <p>
-            <input  class ="cajitas"  type="text" [(ngModel)]="empleados.estado" name='estado' placeholder="Estados" required="required"></p>
-            
+            <select class ="cajitas"  type="text" [(ngModel)]="empleados.estado" name='estado' placeholder="Estados" required="required" >
+                <option value="1">Activo</option> 
+                <option value="2">Inactivo</option> 
+             </select>
         <p>
           <input type="submit" (click)="edit ? editar() : registrar()" value="Guardar"><input type="button" onclick="location.href='http://localhost:4200/maestroempleados'" value="Cancelar"> </p>
       </form>
