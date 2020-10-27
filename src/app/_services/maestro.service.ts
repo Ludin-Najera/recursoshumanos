@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { empleados1 } from '../models/empleados';
 import { detalleempleados1 } from '../models/detalleempleados';
 
-const AUTH_API = 'http://localhost:5000/';
+//const AUTH_API = 'http://localhost:5000/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -26,12 +26,20 @@ export class EmpleadosService {
   constructor(private http: HttpClient){}
 
   //mostrar todos los empleados
+  //getempleados() {
+  //  return this.http.get(AUTH_API + 'empleados',httpOptions);
+ // }
+
+
   getempleados() {
-    return this.http.get(AUTH_API + 'empleados',httpOptions);
+    return this.http.get('http://localhost:5000/empleados', httpOptions);
   }
 
+ // getempleadosinactivos() {
+ //   return this.http.get(AUTH_API + 'empleadosinactivos',httpOptions);
+ // }
   getempleadosinactivos() {
-    return this.http.get(AUTH_API + 'empleadosinactivos',httpOptions);
+    return this.http.get('http://localhost:5000/empleadosinactivos');
   }
 
 
